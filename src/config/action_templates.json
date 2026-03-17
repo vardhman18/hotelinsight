@@ -1,0 +1,316 @@
+{
+  "UNDERSTAFFING": {
+    "immediate": [
+      {
+        "action": "Hire additional housekeeping staff",
+        "cost_formula": "rooms * 36",
+        "timeline": "This week - post job ads immediately",
+        "impact": "Reduces workload by 30-40%, improves cleaning quality"
+      },
+      {
+        "action": "Redistribute current workload and optimise shift schedules",
+        "cost_formula": "0",
+        "timeline": "1-2 days",
+        "impact": "Temporary 10-15% efficiency gain while hiring proceeds"
+      }
+    ],
+    "short_term": [
+      {
+        "action": "Implement staff scheduling software (e.g., Deputy or Humanity)",
+        "cost_formula": "500 + (rooms * 0.5)",
+        "timeline": "2-4 weeks",
+        "impact": "Better peak-time coverage, 20% efficiency boost"
+      },
+      {
+        "action": "Partner with a hospitality temp agency for flexible cover",
+        "cost_formula": "rooms * 15",
+        "timeline": "2-3 weeks",
+        "impact": "Eliminates gaps during high-demand periods"
+      }
+    ],
+    "long_term": [
+      {
+        "action": "Develop staff retention and incentive programme",
+        "cost_formula": "rooms * 10",
+        "timeline": "3 months",
+        "impact": "Reduces turnover by 30%, maintains consistent quality"
+      },
+      {
+        "action": "Introduce cross-training so all front-of-house staff cover housekeeping peaks",
+        "cost_formula": "TRAINING_COST_BASE",
+        "timeline": "3-4 months",
+        "impact": "Built-in flexibility; 15% reduction in dependency on external hire"
+      }
+    ]
+  },
+
+  "TRAINING_ISSUES": {
+    "immediate": [
+      {
+        "action": "Run a one-day refresher session on brand standards and guest expectations",
+        "cost_formula": "200 + (rooms * 0.5)",
+        "timeline": "Within 1 week",
+        "impact": "Immediate uplift in consistency; addresses known skill gaps quickly"
+      },
+      {
+        "action": "Create quick-reference SOP cards for common guest interactions",
+        "cost_formula": "150",
+        "timeline": "3-5 days",
+        "impact": "Reduces reliance on memory; faster onboarding for new hires"
+      }
+    ],
+    "short_term": [
+      {
+        "action": "Enrol all guest-facing staff in accredited hospitality training course",
+        "cost_formula": "TRAINING_COST_BASE + (rooms * 2)",
+        "timeline": "4-6 weeks",
+        "impact": "Structured skill development; targets 78% improvement in service scores"
+      },
+      {
+        "action": "Implement monthly mystery-guest audits with coaching feedback",
+        "cost_formula": "300 + (rooms * 1)",
+        "timeline": "1 month to set up; ongoing",
+        "impact": "Continuous improvement culture; 20% improvement per quarter"
+      }
+    ],
+    "long_term": [
+      {
+        "action": "Establish an internal training academy with e-learning modules",
+        "cost_formula": "2000 + (rooms * 5)",
+        "timeline": "3-6 months",
+        "impact": "Scalable, consistent training; reduces onboarding time by 40%"
+      },
+      {
+        "action": "Create clear career-progression pathways tied to training milestones",
+        "cost_formula": "rooms * 8",
+        "timeline": "4-5 months",
+        "impact": "Improves staff motivation and retention by 25%"
+      }
+    ]
+  },
+
+  "EQUIPMENT_ISSUES": {
+    "immediate": [
+      {
+        "action": "Conduct full equipment audit and tag all faulty items for priority repair",
+        "cost_formula": "0",
+        "timeline": "2-3 days",
+        "impact": "Prevents guests encountering known broken equipment"
+      },
+      {
+        "action": "Arrange emergency repair contracts for HVAC and plumbing",
+        "cost_formula": "500 + (rooms * 3)",
+        "timeline": "1 week",
+        "impact": "Resolves high-impact failures quickly; reduces 1-star reviews"
+      }
+    ],
+    "short_term": [
+      {
+        "action": "Replace end-of-life equipment in highest-complaint room categories",
+        "cost_formula": "rooms * EQUIPMENT_COST_PER_ROOM",
+        "timeline": "3-6 weeks",
+        "impact": "Direct reduction in maintenance complaints; improves comfort scores"
+      },
+      {
+        "action": "Introduce a preventive maintenance schedule using a CMMS tool",
+        "cost_formula": "800 + (rooms * 2)",
+        "timeline": "4 weeks",
+        "impact": "Reduces breakdown frequency by 50% within 6 months"
+      }
+    ],
+    "long_term": [
+      {
+        "action": "Phased capital refresh programme for all in-room technology",
+        "cost_formula": "rooms * 50",
+        "timeline": "6-12 months",
+        "impact": "Modernises guest experience; targets top-10% TripAdvisor ranking"
+      },
+      {
+        "action": "Negotiate long-term service contracts with equipment vendors",
+        "cost_formula": "rooms * 15",
+        "timeline": "3-4 months",
+        "impact": "Reduces repair costs by 30%; guaranteed response times"
+      }
+    ]
+  },
+
+  "TIME_PRESSURE": {
+    "immediate": [
+      {
+        "action": "Extend housekeeping shift overlap to allow proper room-turn time",
+        "cost_formula": "rooms * 5",
+        "timeline": "2-3 days",
+        "impact": "Reduces rushed cleans; 20% improvement in cleanliness scores"
+      },
+      {
+        "action": "Implement staggered check-out times to spread workload",
+        "cost_formula": "0",
+        "timeline": "Immediately",
+        "impact": "Reduces peak-hour bottlenecks by 25%"
+      }
+    ],
+    "short_term": [
+      {
+        "action": "Introduce express room-cleaning checklists with time targets per task",
+        "cost_formula": "100 + (rooms * 0.5)",
+        "timeline": "2-3 weeks",
+        "impact": "Maintains quality under time constraints; 15% faster compliant cleans"
+      },
+      {
+        "action": "Use mobile housekeeping management app for real-time room status",
+        "cost_formula": "600 + (rooms * 1)",
+        "timeline": "3-4 weeks",
+        "impact": "Eliminates wasted trips; 10-15% time saving per shift"
+      }
+    ],
+    "long_term": [
+      {
+        "action": "Reconfigure check-in/check-out policy to maximise cleaning windows",
+        "cost_formula": "0",
+        "timeline": "2-3 months (requires PMS config)",
+        "impact": "Structural fix; sustainable improvement without extra headcount"
+      },
+      {
+        "action": "Invest in faster-drying linen and commercial-grade cleaning equipment",
+        "cost_formula": "rooms * 30",
+        "timeline": "3-4 months",
+        "impact": "Cuts room-turn time by 20%; enables same-day reletting"
+      }
+    ]
+  },
+
+  "SUPPLY_CHAIN_ISSUES": {
+    "immediate": [
+      {
+        "action": "Audit current stock levels and identify critical shortages",
+        "cost_formula": "0",
+        "timeline": "1 day",
+        "impact": "Prevents guests experiencing missing amenities"
+      },
+      {
+        "action": "Place emergency orders from secondary suppliers to cover gaps",
+        "cost_formula": "rooms * 20",
+        "timeline": "3-5 days",
+        "impact": "Restores full amenity provision within the week"
+      }
+    ],
+    "short_term": [
+      {
+        "action": "Diversify supplier base to at least two approved vendors per category",
+        "cost_formula": "200",
+        "timeline": "3-4 weeks",
+        "impact": "Eliminates single-supplier dependency; 80% reduction in stock-out risk"
+      },
+      {
+        "action": "Implement par-level stock system with automated reorder alerts",
+        "cost_formula": "400 + (rooms * 1)",
+        "timeline": "4-6 weeks",
+        "impact": "Prevents shortages; reduces emergency procurement costs by 40%"
+      }
+    ],
+    "long_term": [
+      {
+        "action": "Negotiate annual supply contracts with volume discounts",
+        "cost_formula": "rooms * 5",
+        "timeline": "3 months",
+        "impact": "15-20% cost reduction; guaranteed availability"
+      },
+      {
+        "action": "Integrate purchasing with PMS to auto-calculate stock requirements by occupancy",
+        "cost_formula": "1500 + (rooms * 3)",
+        "timeline": "4-6 months",
+        "impact": "Eliminates manual ordering errors; 25% reduction in waste"
+      }
+    ]
+  },
+
+  "PROCESS_INEFFICIENCY": {
+    "immediate": [
+      {
+        "action": "Map the current end-to-end guest complaint process and identify bottlenecks",
+        "cost_formula": "0",
+        "timeline": "2-3 days",
+        "impact": "Provides clear baseline for process improvement"
+      },
+      {
+        "action": "Empower front-desk staff to resolve Tier-1 complaints without manager approval",
+        "cost_formula": "50",
+        "timeline": "3-5 days (policy update)",
+        "impact": "Reduces complaint resolution time from hours to minutes"
+      }
+    ],
+    "short_term": [
+      {
+        "action": "Introduce a digital guest-issue log with SLA targets per complaint type",
+        "cost_formula": "500 + (rooms * 2)",
+        "timeline": "3-4 weeks",
+        "impact": "Accountability and tracking; 30% faster average resolution"
+      },
+      {
+        "action": "Redesign room-inspection checklist using lean 5S principles",
+        "cost_formula": "300",
+        "timeline": "2-3 weeks",
+        "impact": "Cuts inspection time by 15% without quality loss"
+      }
+    ],
+    "long_term": [
+      {
+        "action": "Conduct full ISO-9001-aligned process review for all guest-facing operations",
+        "cost_formula": "2500 + (rooms * 5)",
+        "timeline": "4-6 months",
+        "impact": "Systematic quality uplift; targets 25% reduction in all complaint categories"
+      },
+      {
+        "action": "Implement a property management system upgrade with automated workflow triggers",
+        "cost_formula": "3000 + (rooms * 10)",
+        "timeline": "6 months",
+        "impact": "End-to-end automation; 40% reduction in administrative overhead"
+      }
+    ]
+  },
+
+  "COMMUNICATION_BREAKDOWN": {
+    "immediate": [
+      {
+        "action": "Hold daily 10-minute team stand-ups to share key guest feedback and priorities",
+        "cost_formula": "0",
+        "timeline": "Immediately",
+        "impact": "Keeps all staff aligned; prevents repeat complaints from same guests"
+      },
+      {
+        "action": "Create a shared digital notice board for real-time alerts (e.g. VIP arrivals, complaints)",
+        "cost_formula": "100",
+        "timeline": "1-2 days",
+        "impact": "Reduces information silos; 20% faster cross-department response"
+      }
+    ],
+    "short_term": [
+      {
+        "action": "Deploy a messaging platform (e.g. Slack, Microsoft Teams) for all departments",
+        "cost_formula": "200 + (rooms * 0.5)",
+        "timeline": "2-3 weeks",
+        "impact": "Instant communication; eliminates phone tag and missed handovers"
+      },
+      {
+        "action": "Introduce weekly management review of all negative reviews with root-cause discussion",
+        "cost_formula": "0",
+        "timeline": "Start next week",
+        "impact": "Closes feedback loop; prevents issues recurring week-on-week"
+      }
+    ],
+    "long_term": [
+      {
+        "action": "Implement a unified guest-profile system so all staff see full guest history",
+        "cost_formula": "2000 + (rooms * 8)",
+        "timeline": "3-4 months",
+        "impact": "Personalised service; 35% reduction in repeat complaints from returning guests"
+      },
+      {
+        "action": "Establish a monthly all-staff town hall with guest-satisfaction transparency reports",
+        "cost_formula": "rooms * 2",
+        "timeline": "3 months to mature",
+        "impact": "Builds service culture; staff who understand impact improve 20% faster"
+      }
+    ]
+  }
+}

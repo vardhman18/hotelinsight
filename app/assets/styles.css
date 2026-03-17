@@ -1,0 +1,104 @@
+/* HotelInsight - Custom Streamlit Styles */
+
+/* ── Metric cards ────────────────────────────────────────────────── */
+.big-metric {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1f77b4;
+}
+
+/* ── Priority badges ─────────────────────────────────────────────── */
+.badge-critical {
+    background-color: #ff4444;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.85em;
+}
+
+.badge-high {
+    background-color: #ff8c00;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.85em;
+}
+
+.badge-medium {
+    background-color: #ffd700;
+    color: #333;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.85em;
+}
+
+.badge-low {
+    background-color: #4caf50;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.85em;
+}
+
+/* ── Section headers ─────────────────────────────────────────────── */
+.section-header {
+    border-left: 4px solid #1f77b4;
+    padding-left: 12px;
+    margin-bottom: 16px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+/* ── Review quote cards ──────────────────────────────────────────── */
+.review-quote {
+    background-color: #f8f9fa;
+    border-left: 3px solid #aaa;
+    padding: 8px 12px;
+    margin: 6px 0;
+    border-radius: 4px;
+    font-style: italic;
+    color: #555;
+    font-size: 0.9em;
+}
+
+/* ── Action cards ───────────────────────────────────────────────── */
+.action-immediate {
+    border-left: 4px solid #ff4444;
+    padding: 8px 12px;
+    background: #fff5f5;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.action-short-term {
+    border-left: 4px solid #ff8c00;
+    padding: 8px 12px;
+    background: #fff8f0;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.action-long-term {
+    border-left: 4px solid #4caf50;
+    padding: 8px 12px;
+    background: #f5fdf5;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+/* ── Sidebar branding ───────────────────────────────────────────── */
+.sidebar-brand {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #1f77b4;
+}
+
+/* ── Footer ─────────────────────────────────────────────────────── */
+footer { visibility: hidden; }
+
+/* ── Streamlit default overrides ────────────────────────────────── */
+.stMetric label { font-size: 0.85em !important; color: #666 !important; }
