@@ -96,6 +96,80 @@ Lazy-loading sentiment scorer.
 
 ---
 
+## `src.analysis.nlp_features`
+
+### `class NLPFeaturesExtractor`
+Advanced NLP feature extraction using spaCy for entity recognition, POS tagging, and dependency parsing.
+
+| Method | Signature | Returns |
+|--------|-----------|---------|
+| `extract_entities` | `(text: str) -> dict[str, list[str]]` | Named entities by type (PERSON, ORG, GPE, PRODUCT, FACILITY) |
+| `extract_noun_phrases` | `(text: str) -> list[str]` | Multi-word noun chunks |
+| `extract_adjectives` | `(text: str) -> list[tuple[str, str]]` | (adjective, noun) pairs |
+| `extract_pos_tags` | `(text: str) -> dict[str, list[str]]` | Grouped by POS type (NOUN, VERB, ADJ, ADV, PROPN) |
+| `extract_lemmas` | `(text: str) -> list[str]` | Lemmatized word tokens |
+| `analyze_syntactic_complexity` | `(text: str) -> dict` | sentence_count, avg_sentence_length, avg_dependency_depth |
+| `comprehensive_analysis` | `(text: str) -> dict` | Combines all extraction methods |
+| `batch_analysis` | `(texts: list[str]) -> list[dict]` | Efficient batch processing |
+
+**Features:** Identifies specific complaint topics (e.g. "dirty bathroom", "rude staff") using linguistic patterns.
+
+---
+
+## `src.analysis.nltk_sentiment`
+
+### `class NLTKSentimentAnalyzer`
+NLTK-based sentiment analysis using TextBlob, tokenization, and subjectivity scoring.
+
+| Method | Signature | Returns |
+|--------|-----------|---------|
+| `analyze_textblob` | `(text: str) -> dict` | polarity, subjectivity scores |
+| `analyze_sentence_level` | `(text: str) -> dict` | Per-sentence sentiment analysis |
+| `extract_subjective_words` | `(text: str) -> list[str]` | Opinion-bearing words |
+| `word_frequency` | `(text: str, top_n=10) -> list[tuple]` | (word, frequency) pairs |
+| `extract_keywords` | `(text: str, top_n=15) -> tuple` | (keywords_list, keyword_scores_dict) |
+| `tokenize_and_analyze` | `(text: str) -> dict` | Token count, word count, vocabulary richness |
+| `comprehensive_nltk_analysis` | `(text: str) -> dict` | Combines all NLTK analyses |
+
+### `class EnsembleSentimentAnalyzer`
+Combines BERT, VADER, and TextBlob for robust sentiment prediction with confidence scoring.
+
+| Method | Signature | Returns |
+|--------|-----------|---------|
+| `ensemble_score` | `(text: str, weights=None) -> dict` | ensemble_score, component scores, agreement level, consensus_label |
+
+**Weights (default):** VADER 0.33, BERT 0.33, TextBlob 0.34.
+**Agreement:** Normalized standard deviation of component scores (higher = more consensus).
+
+---
+
+## `src.analysis.xgboost_classifier`
+
+### `class XGBoostTopicClassifier(n_estimators=100, max_depth=6, learning_rate=0.1, subsample=0.8)`
+Multi-label topic classifier using XGBoost gradient boosting (enhanced alternative to RandomForest).
+
+| Method | Signature | Returns |
+|--------|-----------|---------|
+| `train` | `(texts, labels, test_size=0.2) -> dict` | Training metrics per category |
+| `predict` | `(texts: list[str]) -> list[list[str]]` | Predicted labels for each text |
+| `predict_proba` | `(texts: list[str]) -> dict` | Probability array per category |
+| `get_feature_importance` | `(category: str, top_n=20) -> list[tuple]` | Top TF-IDF features by importance |
+| `save` | `(model_path=None)` | Pickle models to disk |
+| `load` | `(model_path=None)` | Restore models from disk |
+
+**Binary relevance:** One XGBoost classifier per category for multi-label predictions.
+
+### `class XGBoostEnsembleClassifier(xgboost_weight=0.6, random_forest_weight=0.4)`
+Ensemble combining XGBoost and RandomForest predictions via weighted voting.
+
+| Method | Signature | Returns |
+|--------|-----------|---------|
+| `fit` | `(xgboost_clf, rf_clf)` | Sets component classifiers |
+| `predict` | `(texts: list[str]) -> list[list[str]]` | Union of both methods' predictions |
+| `predict_with_confidence` | `(texts: list[str]) -> list[tuple]` | (predicted_labels, confidence_score) |
+
+---
+
 ## `src.analysis.topic_classifier`
 
 ### `class TopicClassifier(n_estimators=200)`

@@ -94,16 +94,37 @@ HotelInsight/
 
 ## Technology
 
+### NLP & Machine Learning
+
+| Component | Libraries |
+|-----------|-----------|
+| **Sentiment Analysis** | BERT (Transformers) — primary; VADER (NLTK) — fast fallback; TextBlob (NLTK) — subjectivity |
+| **Text Processing** | spaCy — entity extraction, POS tagging, dependency parsing; NLTK — tokenization, lemmatization |
+| **Feature Extraction** | scikit-learn — TF-IDF vectorization, text preprocessing |
+| **Topic Classification** | scikit-learn RandomForest + XGBoost — multi-label gradient boosting ensemble |
+| **Sentiment Ensemble** | Weighted voting combining BERT, VADER, and TextBlob for robust predictions |
+
+### Framework & Deployment
+
 | Component | Library |
 |-----------|---------|
 | Web app | Streamlit |
-| Sentiment (primary) | `nlptown/bert-base-multilingual-uncased-sentiment` (HuggingFace) |
-| Sentiment (fallback) | VADER (`nltk`) |
-| Topic classification | TF-IDF + `OneVsRestClassifier(RandomForestClassifier)` |
-| Data processing | pandas, scikit-learn |
-| Visualisation | Plotly |
-| Excel export | openpyxl |
+| Data processing | pandas, numpy |
+| Visualisation | Plotly, matplotlib, seaborn |
+| Excel export | openpyxl, pandas |
 | Testing | pytest |
+| ML frameworks | scikit-learn, XGBoost, PyTorch (BERT) |
+
+### Integrated NLP Libraries
+
+- **`transformers`** (v4.25+) — BERT sentiment models from HuggingFace
+- **`torch`** — PyTorch backend for BERT
+- **`nltk`** (v3.8+) — VADER sentiment, tokenization, TextBlob integration
+- **`spacy`** (v3.4+) — Advanced NLP: entities, POS, dependency parsing
+- **`vaderSentiment`** (v3.3+) — Rule-based sentiment analysis
+- **`scikit-learn`** (v1.2+) — TF-IDF, RandomForest, evaluation metrics
+- **`xgboost`** (v1.7+) — Gradient boosting for topic classification
+- **`textblob`** — Subjectivity and polarity analysis
 
 ---
 
@@ -125,6 +146,47 @@ python scripts/export_results.py --hotel "Hotel Arena"
 # Export top-10 hotels
 python scripts/export_results.py --top 10
 ```
+
+---
+
+## Notebooks
+
+Jupyter analysis notebooks for exploration and model validation:
+
+| Notebook | Purpose |
+|----------|---------|
+| **01_data_exploration** | Dataset inspection: shape, distributions, top hotels, date coverage |
+| **02_sentiment_analysis** | VADER vs BERT comparison, accuracy validation against star ratings |
+| **03_topic_modeling** | Topic/complaint category detection and TF-IDF feature analysis |
+| **04_root_cause_analysis** | Root cause inference patterns and event correlation |
+| **05_nlp_ml_showcase** | ⭐ *NEW* — Comprehensive demonstration of all NLP/ML libraries integrated |
+
+**To run:** `jupyter notebook notebooks/` (requires `jupyter` in requirements.txt)
+
+---
+
+## New Modules (v2.0)
+
+Added advanced NLP and ML capabilities:
+
+### `src.analysis.nlp_features` (spaCy)
+- Entity extraction (PERSON, ORG, GPE, PRODUCT, FACILITY)
+- POS tagging and noun phrase extraction
+- Adjective-noun pair mining for complaint targets
+- Dependency parsing and syntactic complexity analysis
+
+### `src.analysis.nltk_sentiment` (NLTK)
+- TextBlob polarity and subjectivity scoring
+- Sentence-level sentiment breakdown
+- Keyword extraction and word frequency analysis
+- Token analysis (vocabulary richness, word count)
+- Ensemble sentiment combining BERT, VADER, and TextBlob
+
+### `src.analysis.xgboost_classifier` (XGBoost)
+- Multi-label topic classification with gradient boosting
+- Feature importance analysis per category
+- Probability estimation for predictions
+- Ensemble with RandomForest for hybrid approach
 
 ---
 

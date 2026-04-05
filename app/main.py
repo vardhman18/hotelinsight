@@ -89,7 +89,6 @@ if "selected_hotel" in st.session_state:
         st.rerun()
 
 st.sidebar.markdown("---")
-st.sidebar.info("**HotelInsight v1.0**\nBTech Minor Project 2024")
 
 # Keep data-loader runtime state aligned with this Streamlit session.
 if (
