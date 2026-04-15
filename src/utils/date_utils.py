@@ -60,7 +60,7 @@ def safe_to_datetime(series: pd.Series) -> pd.Series:
     Returns:
         Series of ``datetime64`` values.
     """
-    return pd.to_datetime(series, infer_datetime_format=True, errors="coerce")
+    return pd.to_datetime(series, errors="coerce")
 
 
 def get_year_month(dt: datetime) -> str:

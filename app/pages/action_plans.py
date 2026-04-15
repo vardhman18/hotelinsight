@@ -40,22 +40,26 @@ def show() -> None:
     # ── Topic + room count selectors ──────────────────────────────────
     from src.config.settings import COMPLAINT_CATEGORIES
 
-    default_topic = st.session_state.get("selected_issue", COMPLAINT_CATEGORIES[0])
-    default_idx = (
-        COMPLAINT_CATEGORIES.index(default_topic)
-        if default_topic in COMPLAINT_CATEGORIES
-        else 0
-    )
+    if (
+        "selected_issue" not in st.session_state
+        or st.session_state["selected_issue"] not in COMPLAINT_CATEGORIES
+    ):
+        st.session_state["selected_issue"] = COMPLAINT_CATEGORIES[0]
 
     col_left, col_right = st.columns([2, 1])
     with col_left:
-        topic = st.selectbox("Complaint topic:", COMPLAINT_CATEGORIES, index=default_idx)
+        st.selectbox(
+            "Complaint topic:",
+            COMPLAINT_CATEGORIES,
+            key="selected_issue",
+            format_func=lambda t: f"{t.capitalize()}",
+        )
+        topic = st.session_state["selected_issue"]
     with col_right:
         num_rooms = st.number_input(
             "Number of rooms:", min_value=10, max_value=2000, value=100, step=10
         )
 
-    st.session_state["selected_issue"] = topic
     st.markdown("---")
 
     # ── Load data & root causes ────────────────────────────────────────
@@ -69,6 +73,14 @@ def show() -> None:
         st.info(
             "Limited complaint evidence detected. Generated a conservative action plan from fallback root-cause assumptions."
         )
+
+        # In sparse-evidence mode, keep the plan focused by using only the
+        # strongest fallback cause for the selected complaint topic.
+        root_causes = sorted(
+            root_causes,
+            key=lambda rc: rc.get("confidence", 0),
+            reverse=True,
+        )[:1]
 
     if not root_causes:
         st.warning(

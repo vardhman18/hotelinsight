@@ -50,7 +50,7 @@ def show() -> None:
 
     up_col1, up_col2 = st.columns([2, 1])
     with up_col1:
-        use_uploaded = st.toggle(
+        use_uploaded = st.checkbox(
             "Use uploaded file for analysis",
             value=bool(st.session_state.get("uploaded_dataset_active", False)),
             disabled=uploaded is None and "uploaded_dataset_df" not in st.session_state,

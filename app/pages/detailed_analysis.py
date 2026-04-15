@@ -45,16 +45,19 @@ def show() -> None:
 
     # Topic selector
     from src.config.settings import COMPLAINT_CATEGORIES
-    default_topic = st.session_state.get("selected_issue", COMPLAINT_CATEGORIES[0])
-    default_idx = COMPLAINT_CATEGORIES.index(default_topic) if default_topic in COMPLAINT_CATEGORIES else 0
+    if (
+        "selected_issue" not in st.session_state
+        or st.session_state["selected_issue"] not in COMPLAINT_CATEGORIES
+    ):
+        st.session_state["selected_issue"] = COMPLAINT_CATEGORIES[0]
 
-    topic = st.selectbox(
+    st.selectbox(
         "Select complaint topic to analyse:",
         COMPLAINT_CATEGORIES,
-        index=default_idx,
+        key="selected_issue",
         format_func=lambda t: f"{t.capitalize()}",
     )
-    st.session_state["selected_issue"] = topic
+    topic = st.session_state["selected_issue"]
 
     st.markdown("---")
 
