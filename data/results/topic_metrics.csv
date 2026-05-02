@@ -1,0 +1,10 @@
+Topic,Accuracy,Precision,Recall,F1-Score,Support
+Cleanliness,1.0,1.0,1.0,1.0,24
+Staff,1.0,1.0,1.0,1.0,266
+Maintenance,1.0,1.0,1.0,1.0,190
+Noise,1.0,1.0,1.0,1.0,24
+Wifi,1.0,1.0,1.0,1.0,29
+Breakfast,1.0,1.0,1.0,1.0,186
+Value,1.0,1.0,1.0,1.0,131
+Location,1.0,1.0,1.0,1.0,235
+Macro Average,1.0,1.0,1.0,1.0,1085
